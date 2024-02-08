@@ -1,7 +1,9 @@
 #!/bin/bash
 
 # remove previous folder
+echo "///// Destroying lando and remove files ..."
 ./removed9.sh
+echo "///// Stopped and destroyed lando, files removed"
 
 # Initialize a drupal10 recipe
 #mkdir dpl9-app
@@ -9,11 +11,10 @@ sudo chmod -R 777 dpl9-app
 #sudo chown -R www-data:www-data dpl9-app
 cd dpl9-app
 
-
 # Create latest drupal10 project via composer
-mkdir tmp
-chmod 777 -R tmp/
-sudo chown -R www-data:www-data *
+#mkdir tmp
+#chmod 777 -R tmp/
+#sudo chown -R www-data:www-data *
   
 #lando init \
 #    --source cwd \
@@ -35,13 +36,16 @@ cp ../composer.* .
 # lando composer config --global process-timeout 2000
 
 # Start it up
+echo "///// Lando start ..."
 lando start
-
-# Execute composer install
-lando composer install
+echo "///// Lando finished."
 
 # Install a site local drush
-lando composer require drush/drush
+#lando composer require drush/drush
+
+# Execute composer install
+lando composer update -W
+echo "///// Composer updated"
 
 # Install empty drupal db
 #lando drush site:install --db-url=mysql://drupal9:drupal9@database/drupal9 -y
@@ -51,13 +55,18 @@ lando composer require drush/drush
 #lando destroy -y && lando start && lando db-import dump-drupa9.sql.gz
 
 # Install previous DB
-lando db-import ../dump-drupa9.sql.gz
+echo "///// Starting loading database ..."
+cp ../dump-drupal9.sql.gz .
+lando db-import dump-drupal9.sql.gz
+echo "///// Loaded database"
 
+cp -r ../sites web/.
 
 # List information about this app
 lando info
 # Log in as admin with Drush
 lando drush uli -l https://dpl9-app.lndo.site
+echo "///// Access to user "
 
 # Destroy it
 #lando destroy -y
