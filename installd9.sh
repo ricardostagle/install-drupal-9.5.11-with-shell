@@ -3,7 +3,7 @@
 # remove previous folder
 echo "///// Destroying lando and remove files ..."
 ./removed9.sh
-echo "///// Stopped and destroyed lando, files removed"
+echo "///// Stopped and destroyed lando, removed files."
 
 # Initialize a drupal10 recipe
 #mkdir dpl9-app
@@ -36,7 +36,7 @@ cp ../composer.* .
 # lando composer config --global process-timeout 2000
 
 # Start it up
-echo "///// Lando start ..."
+echo "///// Lando starting ..."
 lando start
 echo "///// Lando finished."
 
@@ -52,7 +52,7 @@ echo "///// Composer updated"
 
 # Backup and Restore DB
 #lando db-export dump-drupal9.sql
-#lando destroy -y && lando start && lando db-import dump-drupa9.sql.gz
+#lando destroy -y && lando start && lando db-import dump-drupal9.sql.gz
 
 # Install previous DB
 echo "///// Starting loading database ..."
@@ -61,12 +61,13 @@ lando db-import dump-drupal9.sql.gz
 echo "///// Loaded database"
 
 cp -r ../sites web/.
+echo "///// Copied settings.php file."
 
 # List information about this app
 lando info
-# Log in as admin with Drush
+# Log in as admin with Drush or with password Guadalajara01!!!
 lando drush uli -l https://dpl9-app.lndo.site
-echo "///// Access to user "
+echo "///// Access to admin user."
 
 # Destroy it
 #lando destroy -y
