@@ -26,11 +26,8 @@ cd dpl9-app
 # Get drupal/recommended project
 #lando composer create-project drupal/recommended-project:9.5.11 "tmp" && cp -r tmp/. . && rm -rf tmp/
 
-# Get drupal/recommended project previously and manually downloaded in tmp_d9 folder in Ubuntu with the content gotten by composer create-project drupal/recommended-project:9.5.11 "tmp"
-cp -r ../tmp_d9/. .
-
-# Replace composer files with custom files
-cp ../composer.* .
+# Get drupal/recommended project previously and manually downloaded in d9 folder in Ubuntu with the content gotten by composer create-project drupal/recommended-project:9.5.11 "tmp"
+cp -r ../d9/. .
 
 # Composer can timeout on install for some machines, if that happens, run the following command and then re-run the previous lando composer command:
 # lando composer config --global process-timeout 2000
@@ -56,12 +53,8 @@ echo "///// Composer updated"
 
 # Install previous DB
 echo "///// Starting loading database ..."
-cp ../dump-drupal9.sql.gz .
 lando db-import dump-drupal9.sql.gz
 echo "///// Loaded database"
-
-cp -r ../sites web/.
-echo "///// Copied settings.php file."
 
 # List information about this app
 lando info
