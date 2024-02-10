@@ -1,0 +1,4 @@
+name: React Json Component
+type: module
+description: 'A module for basic React components from url (https://www.specbee.com/blogs/how-to-react-quickly-in-drupal)'
+core_version_requirement: ">=8"

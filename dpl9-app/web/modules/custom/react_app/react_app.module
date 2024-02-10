@@ -1,0 +1,37 @@
+<?php
+use Drupal\views\ViewExecutable;
+
+/**
+ * Implements hook_element_info_alter().
+ */
+function react_app_element_info_alter(array &$info) {
+  if (isset($info['table'])) {
+    $info['table']['#attached']['library'][] = 'your_module/library_name';
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function react_app_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  /* @var Drupal\Core\Entity\FieldableEntityInterface $entity */
+  $formObject = $form_state->getFormObject();
+  if ($formObject instanceof \Drupal\Core\Entity\EntityFormInterface) {
+    $entity = $formObject->getEntity();
+    if (
+      $entity->getEntityTypeId() === 'node'
+      && in_array($entity->bundle(), ['organisation', 'location', 'event', 'article'])
+    ) {
+      $form['#attached']['library'][] = 'yourmodule/yourlibrary';
+    }
+  }
+}
+
+/**
+* Implements hook_views_pre_render().
+*/
+function react_app_views_pre_render(ViewExecutable $view) {
+  if (isset($view) && ($view->storage->id() == 'super_awesome_view')) {
+    $view->element['#attached']['library'][] = 'custom/custom_view';
+  }
+}

@@ -1,0 +1,7 @@
+1 # Create a package.json if you don't have one already.
+2 npm init -y
+3 # Install the required dependencies
+4 npm install --save-dev react react-dom prop-types
+5 npm install --save-dev @babel/core @babel/preset-env @babel/preset-react babel-loader webpack webpack-cli
+6 # Now we are ready to compile the JSX file.
+7 npm run build  (OR) npm run build:dev

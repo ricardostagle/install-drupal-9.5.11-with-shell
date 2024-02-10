@@ -1,0 +1,23 @@
+uuid: 02c1b95d-f409-42ff-b37a-1c855c474f7d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.movie.field_release_date
+  module:
+    - datetime
+    - movie
+_core:
+  default_config_hash: GveFWKQqCQPClOJEWJlxB8tEuqzdr7_1f-2Zwu-lIJ0
+id: movie.movie.field_release_date
+field_name: field_release_date
+entity_type: movie
+bundle: movie
+label: 'Release Date'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

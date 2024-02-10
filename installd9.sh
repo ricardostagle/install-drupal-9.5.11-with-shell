@@ -64,3 +64,6 @@ echo "///// Access to admin user."
 
 # Destroy it
 #lando destroy -y
+
+# Remove cache
+lando drush cr

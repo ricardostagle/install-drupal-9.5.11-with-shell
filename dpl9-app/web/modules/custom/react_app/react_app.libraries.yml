@@ -1,0 +1,8 @@
+react_block:
+  version: 1.0
+  js:
+    app/js/dist/main.min.js: {}
+react_block_dev:
+  version: 1.0
+  js:
+    app/js/dist_dev/main.min.js: {minified: true}

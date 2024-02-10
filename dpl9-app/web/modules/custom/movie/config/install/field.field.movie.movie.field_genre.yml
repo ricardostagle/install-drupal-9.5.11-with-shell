@@ -1,0 +1,32 @@
+uuid: 0ae882ab-e2d5-4c3c-ac83-43ee71c0965c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.movie.field_genre
+    - taxonomy.vocabulary.genre
+  module:
+    - movie
+_core:
+  default_config_hash: Xl0OU0OHGD6y-rd8D5o7WiMusDadhzHr6T4XxckqxTU
+id: movie.movie.field_genre
+field_name: field_genre
+entity_type: movie
+bundle: movie
+label: Genre
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      genre: genre
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
