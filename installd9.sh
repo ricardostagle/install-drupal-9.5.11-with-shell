@@ -62,6 +62,9 @@ lando info
 lando drush uli -l https://dpl9-app.lndo.site
 echo "///// Access to admin user."
 
+#"lando ssh -c "ls -la /"
+lando ssh -c "/app/web/scripts/modify_user.sh"
+
 # Destroy it
 #lando destroy -y
 
