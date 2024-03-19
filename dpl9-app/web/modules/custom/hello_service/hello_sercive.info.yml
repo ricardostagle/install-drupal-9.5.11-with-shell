@@ -1,0 +1,6 @@
+name: Hello Service
+description: 'Create service example'
+package: drupal_dominiowebmx
+
+type: module
+core_version_requirement: ">=8"

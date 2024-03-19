@@ -1,0 +1,3 @@
+services:
+  hello_service.sayhello
+    class: Drupal\hello_service\HelloService
