@@ -22,6 +22,8 @@
         "drupal/core-composer-scaffold": "^9.5",
         "drupal/core-project-message": "^9.5",
         "drupal/core-recommended": "^9.5",
+        "drupal/rest_api_access_token": "^2.0",
+        "drupal/restui": "^1.21",
         "drupal/simple_oauth": "^5.2",
         "drush/drush": "^11.6"
     },
