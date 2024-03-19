@@ -19,7 +19,7 @@ class HelloServiceController extends ControllerBase {
     $miservicio = \Drupal::service('hello_service.sayhello');
     $misaludo = $miservicio->getSaludo();
 
-    ksm($misaludo);
+    //ksm($misaludo);
 
     return [
       '#markup' => $this->t('Hello @misaludo', ['@misaludo' => $misaludo ]),
