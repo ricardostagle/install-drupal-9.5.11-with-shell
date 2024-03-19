@@ -1,13 +1,13 @@
 <?php
 
-namespace Drupal\saludo_service;
+namespace Drupal\hello_service;
 
 /**
  * @file
  * Service Example
  */
 
-class SaludoService {
+class HelloService {
 
   private $saludo;
 

@@ -16,7 +16,7 @@ class HelloServiceController extends ControllerBase {
   public function content(){
 
 
-    $miservicio = \Drupal::service('hello_service.saludando');
+    $miservicio = \Drupal::service('hello_service.sayhello');
     $misaludo = $miservicio->getSaludo();
 
     ksm($misaludo);

@@ -1,6 +1,6 @@
 hello_service.hellopage:
   path: '/test-page'
   defaults:
-    _controller: '\Drupal\hello_service\Controller\iHelloServiceController::content'
+    _controller: '\Drupal\hello_service\Controller\HelloServiceController::content'
   requirements:
     _permission: 'access content'

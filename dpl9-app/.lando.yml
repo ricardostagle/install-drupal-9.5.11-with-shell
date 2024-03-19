@@ -3,3 +3,8 @@ recipe: drupal9
 config:
   webroot: web
   php: 8.2
+services:
+    appserver:
+        overrides:
+            extra_hosts:
+                - ${LANDO_HOST_NAME_DEV:-host}:${LANDO_HOST_GATEWAY_DEV:-host-gateway}

@@ -1,0 +1,3 @@
+// ~/.lando/config.yml
+appEnv:
+  LANDO_HOST_IP: $LANDO_HOST_NAME_DEV
