@@ -843,4 +843,49 @@ $databases['default']['default'] = array (
   'driver' => 'mysql',
   'autoload' => 'core/modules/mysql/src/Driver/Database/mysql/',
 );
+
 $settings['config_sync_directory'] = 'sites/default/files/config_5gCXeZD6D2eswPiLMkBZQBP57MYlopCv8Ajy15LjblOlOTqgEdlV2QplpjOLuoUNel4aQZ2nxQ/sync';
+
+//https://patrickmichael.co.za/drupal-88-9-configuration-management
+getenv('ENV_IDENTIFIER') ? $drupal_environment = getenv("ENV_IDENTIFIER") : 
+$drupal_environment = 'development';
+
+//$config['google_tag.settings.container_id'] = "UA-########-3";
+//$config['config_split.config_split.staging_split']['status'] = TRUE;
+
+switch ($drupal_env) {
+  case 'dev':
+    // Environment indicator
+    $config['environment_indicator.indicator']['bg_color'] = 'green';
+    $config['environment_indicator.indicator']['fg_color'] = '#ebeef4';
+    $config['environment_indicator.indicator']['name'] = 'Dev';
+    // Config Split
+    $config['config_split.config_split.dev_split']['status'] = TRUE;
+    // robots.txt
+    $config['robotstxt.settings']['content'] = "User-agent: *\nDisallow: /\n";
+    break;
+  case 'staging':
+    // Environment indicator
+    $config['environment_indicator.indicator']['bg_color'] = 'yellow';
+    $config['environment_indicator.indicator']['fg_color'] = 'black';
+    $config['environment_indicator.indicator']['name'] = 'Staging';
+    // Config Split
+    $config['config_split.config_split.staging_split']['status'] = TRUE;
+    // robots.txt
+    $config['robotstxt.settings']['content'] = "User-agent: *\nDisallow: /\n";
+    break;
+  case 'production':
+    // Environment indicator
+    $config['environment_indicator.indicator']['bg_color'] = 'red';
+    $config['environment_indicator.indicator']['fg_color'] = 'white';
+    $config['environment_indicator.indicator']['name'] = 'Production';
+    // Config Split
+    $config['config_split.config_split.production_split']['status'] = TRUE;
+    // robots.txt
+    // Set via the UI
+    //  Google tag id
+    $config['google_tag.settings.container_id'] = "UA-xxxxxxxx-x";
+    break;
+  default:
+    $config['config_split.config_split.dev_split']['status'] = TRUE;
+}
