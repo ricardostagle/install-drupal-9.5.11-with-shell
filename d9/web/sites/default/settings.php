@@ -844,7 +844,8 @@ $databases['default']['default'] = array (
   'autoload' => 'core/modules/mysql/src/Driver/Database/mysql/',
 );
 
-$settings['config_sync_directory'] = 'sites/default/files/config_5gCXeZD6D2eswPiLMkBZQBP57MYlopCv8Ajy15LjblOlOTqgEdlV2QplpjOLuoUNel4aQZ2nxQ/sync';
+//$settings['config_sync_directory'] = 'sites/default/files/config/sync';
+$settings['config_sync_directory'] = '../config/sync';
 
 //https://patrickmichael.co.za/drupal-88-9-configuration-management
 getenv('ENV_IDENTIFIER') ? $drupal_environment = getenv("ENV_IDENTIFIER") : 
@@ -853,8 +854,8 @@ $drupal_environment = 'development';
 //$config['google_tag.settings.container_id'] = "UA-########-3";
 //$config['config_split.config_split.staging_split']['status'] = TRUE;
 
-switch ($drupal_env) {
-  case 'dev':
+switch ($drupal_environment) {
+  case 'development':
     // Environment indicator
     $config['environment_indicator.indicator']['bg_color'] = 'green';
     $config['environment_indicator.indicator']['fg_color'] = '#ebeef4';

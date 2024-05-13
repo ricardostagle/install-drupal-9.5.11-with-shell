@@ -25,6 +25,8 @@
         "drupal/core-composer-scaffold": "^9.5",
         "drupal/core-project-message": "^9.5",
         "drupal/core-recommended": "^9.5",
+        "drupal/devel": "^5.0",
+        "drupal/devel_kint_extras": "^1.1",
         "drupal/environment_indicator": "^4.0",
         "drupal/google_analytics": "^4.0",
         "drupal/gtm": "^1.8",
@@ -32,6 +34,8 @@
         "drupal/restui": "^1.21",
         "drupal/robotstxt": "^1.5",
         "drupal/simple_oauth": "^5.2",
+        "drupal/twig_debugger": "^1.1",
+        "drupal/twig_vardumper": "^2.2",
         "drush/drush": "^11.6"
     },
     "conflict": {
